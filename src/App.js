@@ -1,41 +1,32 @@
-import React from "react";
-import "./App.css"
-function App() {
-  return (
-    <div className="card">
-    <img src="http://source.unsplash.com/random" alt="" className="image"/>
-    <div className="div-0">
-      <div className="div-1">
-        Photo by John Doe
-      </div>
-      <ul>
-        <li>
-          <strong>Views: </strong>
-          4000
-        </li>
-        <li>
-          <strong>Downloads: </strong>
-          300
-        </li>
-        <li>
-          <strong>Likes: </strong>
-          400
-        </li>
-      </ul>
-    </div>
-    <div className="inline">
-      <span className="hashtag">
-        #tag1
-      </span>
-      <span className="hashtag">
-        #tag2
-      </span>
-      <span className="hashtag">
-        #tag3 
-      </span>
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import ImagesCard from "./components/ImagesCard";
 
-    </div>
-    </div>
+function App() {
+  const [images, setImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [term, setTerm] = useState('');
+
+  useEffect(() => {
+    fetch(`https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${term}&images_type=photo&pretty=true`)
+      .then(res => res.json())
+      .then(data => {
+        // console.log(data)
+        setImages(data.hits);
+        setIsLoading(false);
+      })
+      .catch(err => console.log(err));
+  }, []);
+
+  return (
+    <>
+      {isLoading ? <h1 className="loading">Loading...</h1> : <div className="grid">
+      {images.map(image => (
+        <ImagesCard key={image.id} image={image} />
+      ))}
+    </div>}
+    </>
+  
   );
 }
 
