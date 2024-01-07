@@ -1,9 +1,9 @@
 .grid{
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
-  grid-gap: 40px; /* Adjust the gap between cards */
-  max-width: 900px; /* Adjust the max width as needed */
-  margin: 0 auto; /* Center the grid */
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .card {
@@ -64,4 +64,43 @@ ul li {
  font-size: 50px;
  font-family: arial;
  text-align: center;
+}
+
+.container{
+  display: flex;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+}
+.form-0 {
+  display: inline-block;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 16px;
+}
+
+.div-2{
+  margin-bottom: 10px;
+}
+
+.input-0 {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 300px;
+  outline: none;
+}
+
+.btn {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #45a049;
 }
