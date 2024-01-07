@@ -1,3 +1,11 @@
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
+  grid-gap: 40px; /* Adjust the gap between cards */
+  max-width: 900px; /* Adjust the max width as needed */
+  margin: 0 auto; /* Center the grid */
+}
+
 .card {
   width: 300px;
   background-color: #ffffff;
@@ -5,7 +13,7 @@
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
-  margin: 20px;
+  
 }
 
 .card:hover {
@@ -43,11 +51,17 @@ ul li {
 
 .hashtag {
   display: inline-block;
-  background-color: gray;
-  border-radius: 50%;
+  background-color: rgb(170, 170, 170);
+  border-radius: 20px;
   margin-right: 8px;
   font-size: 12px;
-  padding: 4px;
+  padding: 6px;
   color: white;
   margin-bottom: 8px;
+  margin-left: 6px;
+}
+.loading{
+ font-size: 50px;
+ font-family: arial;
+ text-align: center;
 }
